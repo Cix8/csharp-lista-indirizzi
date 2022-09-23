@@ -8,13 +8,50 @@ public class People
     public string Province { get; private set; }
     public int ZIP { get; private set; }
 
-    public People(string _name, string _surname, string _street, string _city, string _province, int _zip)
+    public People(string _name, string _surname, string _street, string _city, string _province, int _zip = -1)
     {
-        this.Name = _name;
-        this.Surname = _surname;
-        this.Street = _street;
-        this.City = _city;
-        this.Province = _province;
-        this.ZIP = _zip;
+        if(_name == "")
+        {
+            throw new Exception("Il campo \"nome\" non può essere vuoto");
+        } else
+        {
+            this.Name = _name;
+        }
+        if (_surname == "")
+        {
+            throw new Exception("Il campo \"cognome\" non può essere vuoto");
+        }
+        else
+        {
+            this.Surname = _surname;
+        }
+        if (_street == "")
+        {
+            throw new Exception("Il campo \"strada\" non può essere vuoto");
+        } else
+        {
+            this.Street = _street;
+        }
+        if (_city == "")
+        {
+            throw new Exception("Il campo \"città\" non può essere vuoto");
+        } else
+        {
+            this.City = _city;
+        }
+        if (_province == "")
+        {
+            throw new Exception("Il campo \"provincia\" non può essere vuoto");
+        } else
+        {
+            this.Province = _province;
+        }
+        if (_zip == -1)
+        {
+            throw new Exception("Il campo \"CAP\" non può essere vuoto");
+        } else
+        {
+            this.ZIP = _zip;
+        }
     }
 }
